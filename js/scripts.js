@@ -1,3 +1,19 @@
+var checkForFourOrNine = function(string) {
+  if ((string.match(/[49]/)) !== null) {
+    return true;
+  } else {
+    return false;
+  }
+};
+
+var checkForMultiples = function(resultArray) {
+  if ((resultArray.match(/[MDCLXVI]{4,}/)) !== null) {
+    return true;
+  } else {
+    return false;
+  }
+};
+
 var decompose = function(number) {
   var components = [1000, 500, 100, 50, 10, 5, 1];
   var resultArray = [];
@@ -44,14 +60,6 @@ var convertToRomanNumerals = function(resultArray) {
   stringResultArray = stringResultArray.replace(/10/g, "X");
   stringResultArray = stringResultArray.replace(/5/g, "V");
   stringResultArray = stringResultArray.replace(/1/g, "I");
-  resultArray = stringResultArray
+  resultArray = stringResultArray;
   return resultArray;
-};
-
-var checkForMultiples = function(resultArray) {
-  if ((resultArray.match(/[MDCLXVI]{4,}/)) !== null) {
-    return true;
-  } else {
-    return false;
-  }
 };

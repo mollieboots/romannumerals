@@ -1,3 +1,9 @@
+describe('checkForFourOrNine', function() {
+	it("will check to see if the number contains a 4 or 9", function() {
+		expect(checkForFourOrNine("93")).to.equal(true);
+	});
+});
+
 describe('decompose', function() {
 	it("take input, and split into parts", function() {
 		expect(decompose(36)).to.eql([10,10,10,5,1]);
