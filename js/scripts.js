@@ -1,6 +1,6 @@
 var decompose = function(number) {
-  var components = [1000, 500, 100, 50, 10, 5, 1]
-  var resultArray = []
+  var components = [1000, 500, 100, 50, 10, 5, 1];
+  var resultArray = [];
   for(var index = number; index >= 0; index -= component)
     if (number % components[0] < number) {
       resultArray.push(components[0]);
@@ -32,4 +32,26 @@ var decompose = function(number) {
       var component = components[6];
     }
     return resultArray;
-}
+};
+
+var convertToRomanNumerals = function(resultArray) {
+  var stringResultArray = resultArray.toString();
+  stringResultArray = stringResultArray.replace(/[,]/g, "");
+  stringResultArray = stringResultArray.replace(/1000/g, "M");
+  stringResultArray = stringResultArray.replace(/500/g, "D");
+  stringResultArray = stringResultArray.replace(/100/g, "C");
+  stringResultArray = stringResultArray.replace(/50/g, "L");
+  stringResultArray = stringResultArray.replace(/10/g, "X");
+  stringResultArray = stringResultArray.replace(/5/g, "V");
+  stringResultArray = stringResultArray.replace(/1/g, "I");
+  resultArray = stringResultArray
+  return resultArray;
+};
+
+var checkForMultiples = function(resultArray) {
+  if ((resultArray.match(/[MDCLXVI]{4,}/)) !== null) {
+    return true;
+  } else {
+    return false;
+  }
+};
