@@ -63,3 +63,52 @@ var convertToRomanNumerals = function(resultArray) {
   resultArray = stringResultArray;
   return resultArray;
 };
+
+
+
+
+var MasterConverter = function(string) {
+  if (checkForFourOrNine(string) === true) {
+    return "You entered a number containing a 4 or 9.";
+  } else {
+    var decomposedString = decompose(parseInt(string));
+    return convertToRomanNumerals(decomposedString);
+  }
+};
+
+
+var prependZeros = function(string) {
+  for (var stringLength = string.length; stringLength < 3; string = "0" + string)
+   stringLength = string.length;
+   return string.split('');
+};
+
+
+
+var replaceNines = function(array){
+
+array.forEach(function(element) {
+  if (array[1] === "9") {
+    array[1] = "CM";
+  } else if (array[2] === "9") {
+    array[2] = "XC";
+  } else if (array[3] === "9") {
+    array[3] = "IX";
+  }
+});
+return array;
+};
+
+
+
+
+
+/*
+if a 9 appears in the hundreds column (aka index 1), replace 9 with CM
+if a 9 appears in the tens columns (aka index 2), replace 9 with XC
+if a 9 appears in the ones column (aka index 3), replace with IX
+
+if a 4 appears in the hundreds column (aka index 1), replace 4 with CD
+if a 4 appears in the tens column (aka index 2), replace 4 with XL
+if a 4 appears in the ones column (aka index 3), replace 4 with IV
+*/

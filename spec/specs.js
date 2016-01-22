@@ -28,6 +28,14 @@ describe('checkForMultiples', function() {
 	});
 });
 
+describe('prependZeros', function () {
+	it("prepend leading zeros to equal string length of 4", function() {
+		expect(prependZeros('45')).to.eql(['0','0','4','5']);
+	});
+});
+
+
+
 // describe('checkForMultiples', function() {
 // 	it("rejoin array as string and check for multiple iterations of the same character greater than 4")
 // })
